@@ -116,9 +116,16 @@ agents:
 # Optional env vars (set if present in config):
 #   LLM_PROVIDER, LLM_MODEL, LLM_API_KEY,
 #   AGENT_MAX_TURNS, OPS_REPO, OPS_REPO_TOKEN
-# ============================================================
+# # ============================================================
+# runtime:
+#   runner: "hermes run"           # Replace with your agent runner
+#   max_turns_default: 40
+#   branch_convention: "agent/{role}/{issue_number}-{slug}"
+#   receipt_comment_marker: "<!-- agentOS:run-receipt -->"
+
 runtime:
-  runner: "hermes run"           # Replace with your agent runner
+  runner: "claude -p --dangerously-skip-permissions --output-format json"
+  model: "claude-sonnet-4-6"
   max_turns_default: 40
   branch_convention: "agent/{role}/{issue_number}-{slug}"
   receipt_comment_marker: "<!-- agentOS:run-receipt -->"

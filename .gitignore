@@ -1,0 +1,6 @@
+
+# agentOS — local secrets and runtime state
+.agentOS/keys/
+.agentOS/logs/
+.agentOS-state.json
+.venv/
