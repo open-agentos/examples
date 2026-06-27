@@ -121,6 +121,14 @@ jobs:
           echo "::add-mask::$AGENT_TOKEN"
           echo "GITHUB_TOKEN=$AGENT_TOKEN" >> "$GITHUB_ENV"
 
+
+      # -----------------------------------------------------------------------
+      # Install Claude Code CLI (required to run the agent)
+      # -----------------------------------------------------------------------
+      - name: Install Claude CLI
+        if: env.AGENT_ROLE != 'skip'
+        run: npm install -g @anthropic-ai/claude-code
+
       # -----------------------------------------------------------------------
       # Run the agent (claude -p --dangerously-skip-permissions --output-format json is replaced at install time)
       # -----------------------------------------------------------------------
