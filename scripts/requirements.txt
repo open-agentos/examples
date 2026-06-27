@@ -1,0 +1,8 @@
+# AgentOS scripts/requirements.txt
+# Runtime dependencies for scripts/ — mirrors pyproject.toml [project.dependencies]
+# Used by agent-orchestrator.yml, agent-settlement.yml, run-receipt.yml
+
+requests>=2.31
+PyYAML>=6.0
+PyJWT>=2.8
+cryptography>=41.0
