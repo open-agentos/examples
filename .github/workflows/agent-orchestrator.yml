@@ -112,6 +112,8 @@ jobs:
           REVIEWER_PRIVATE_KEY: ${{ secrets.REVIEWER_PRIVATE_KEY }}
           WATCHER_APP_ID: ${{ secrets.WATCHER_APP_ID }}
           WATCHER_PRIVATE_KEY: ${{ secrets.WATCHER_PRIVATE_KEY }}
+          PLANNER_APP_ID: ${{ secrets.PLANNER_APP_ID }}
+          PLANNER_PRIVATE_KEY: ${{ secrets.PLANNER_PRIVATE_KEY }}
         run: |
           AGENT_TOKEN=$(python3 scripts/github_token.py "$AGENT_ROLE")
           echo "::add-mask::$AGENT_TOKEN"
